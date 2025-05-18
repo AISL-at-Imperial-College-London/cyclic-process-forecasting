@@ -10,7 +10,7 @@ from scipy.signal import find_peaks
 def rmse(pred, true):
     return np.sqrt(mean_squared_error(true, pred))
 
-def get_clipped_cycles(signal, min_distance=500, min_prominence=1):
+def get_clipped_cycles(signal, min_distance=100, min_prominence=2):
     inverted_signal = -signal
     valley_indices, _ = find_peaks(inverted_signal, distance=min_distance, prominence=min_prominence)
 
@@ -221,12 +221,12 @@ def run_forecast_multiple_starts(
 # )
 
 run_single_forecast_plot(
-    file_path="London_Process_Data.xlsx",
-    sheet_name="London Dryer1 data from 2023-11",
-    test_cycle_index=9,
-    forecast_start=300,     # <- change this to any step you want
-    window_size=100,
-    target_col_index=29,
+    file_path="Synthetic_Cyclic_Data.xlsx",
+    sheet_name="SyntheticCyclicExample",
+    test_cycle_index=29,
+    forecast_start=50,     # <- change this to any step you want
+    window_size=20,
+    target_col_index=0,
     threshold=40,
     methods=['euclidean', 'dtw']  # both methods will be shown in the plot
 )
