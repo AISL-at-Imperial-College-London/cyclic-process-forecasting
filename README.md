@@ -22,7 +22,7 @@ Core Features:
 - Forecasts the future trajectory using the top-1, top-2, and top-3 neighbors
 - Computes:
     - Forecast accuracy (RMSE)
-    - End-of-cycle time prediction error (e.g., when temp crosses 40°C)
+    - End-of-cycle time prediction error (e.g., when signal crosses a value)
 - Provides both single-shot visualization and multi-start evaluation plots
 
 Key Functions:
